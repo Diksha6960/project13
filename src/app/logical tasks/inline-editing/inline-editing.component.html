@@ -1,0 +1,72 @@
+<p>inline-editing works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="btn btn-sm btn-success tect-end" (click)="onAdd()"> Add New</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered " >
+            <thead class="table-success text-white">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+                    <th>Email-Id</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of loadUsers;let srNo = index">
+                    <td>{{srNo+1}}</td>
+                    <td >
+                        <div *ngIf="user.isEdit">
+                            <input type="text" [(ngModel)]="user.name" >
+                        </div>
+                        <div  *ngIf="!user.isEdit">
+                            {{user.name}}
+                        </div>
+                    </td>
+                    <td><div *ngIf="user.isEdit">
+                        <input type="text" [(ngModel)]="user.username" >
+                    </div>
+                    <div  *ngIf="!user.isEdit">
+                        {{user.username}}
+                    </div></td>
+                    <td>
+                        <div *ngIf="user.isEdit">
+                            <input type="text" [(ngModel)]="user.email" >
+                        </div>
+                        <div  *ngIf="!user.isEdit">
+                            {{user.email}}
+                        </div>
+                       </td>
+                    <td>
+                        <div *ngIf="user.isEdit">
+                            <input type="text" [(ngModel)]="user.phone" >
+                        </div>
+                        <div  *ngIf="!user.isEdit">
+                            {{user.phone}}
+                        </div>
+                        </td>
+                    <td>
+                        
+                        {{user.website}}</td>
+                    <td class="text-center ">
+                        <div *ngIf="!user.isEdit">
+                            <i class="fa fa-pencil px-2" aria-hidden="true" (click)="onEdit(user)"></i>
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                        <div *ngIf="user.isEdit">
+                            <i class="fa fa-floppy-o px-2" aria-hidden="true" (click)="onUpdate(user)"></i>
+                            <i class="fa fa-times" aria-hidden="true" (click)="onCancel(user)"></i>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

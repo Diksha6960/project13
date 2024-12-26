@@ -1,0 +1,77 @@
+<p>add-insurance-compliant works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+<a class="btn btn-sm btn-success" routerLink="/insuranceCompliant">Add Complaint</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row col-12 text-center">
+        <h2>Insurance Complaint Form</h2>
+    </div>
+</div>
+<div class="container ">
+    <div class="row">
+        <div class="col-4">
+            <label for="Insurance Complaint Against">Insurance Complaint Against</label>
+            <br>
+            <input type="radio" name="compliantAgainst" [(ngModel)]="complaintObj.compliantAgainst" value="Insurance Company">Insurance Company
+            <input type="radio" name="compliantAgainst" [(ngModel)]="complaintObj.compliantAgainst" value="Agent/Broker">Agent/Broker
+            <input type="radio"name="compliantAgainst"  [(ngModel)]="complaintObj.compliantAgainst" value="Other">Other
+        </div>
+    </div>
+</div>
+ <div class="row">
+<div class="col-4">
+    <label for="First">First Name</label>
+    <input type="text" class="form-control" [(ngModel)]="complaintObj.firstName" placeholder="First">
+</div>
+<div class="col-4">
+    <label for="last">Last Name</label>
+    <input type="text" class="form-control" [(ngModel)]="complaintObj.lastName" placeholder="Last">
+</div>
+ </div>
+ 
+     <div class="row">
+        <div class="col-12">
+            <label for="address">Address</label>
+            <textarea name="address" class="form-control" [(ngModel)]="complaintObj.address" cols="2"></textarea>
+            
+        </div>
+        <div class="row">
+        <div class="col-4">
+            <label for="City">City</label>
+            <input type="text" class="form-control" [(ngModel)]="complaintObj.city" placeholder="City">
+        </div>
+        <div class="col-4">
+            <label for="State">State</label>
+            <input type="text" class="form-control" [(ngModel)]="complaintObj.state" placeholder="State">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="Phone">Phone</label>
+            
+            <input type="text" class="form-control" [(ngModel)]="complaintObj.phone"  placeholder="Phone">
+        </div>
+        <div class="col-4">
+            <label for="Email">Email-ID</label>
+            <input type="text" class="form-control" [(ngModel)]="complaintObj.email" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label for="complaint">Compliant</label>
+            <textarea name="complaint" class="form-control"  [(ngModel)]="complaintObj.complaint" cols="2"></textarea>
+            
+        </div>
+        <div class="row pt-3">
+        <div class="col-6 text-end">
+            <button  class="btn btn-primary text-end"> Reset </button>
+        </div>
+        <div class="col-6">
+        <button class="btn btn-success text-center" (click)="resister()"> Resister Complaint</button>
+    </div>
+        </div>

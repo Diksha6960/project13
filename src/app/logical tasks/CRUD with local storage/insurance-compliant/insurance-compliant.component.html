@@ -1,0 +1,43 @@
+<p>insurance-compliant works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+<a class="btn btn-sm btn-success" routerLink="/addInsuranceCompliant">Add Complaint</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> Sr No</th>
+                        <th>Name</th>
+                        <th>Contact No</th>
+                        <th>Email</th>
+                        <th>Complaint Against</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of conplaintArray;let sr=index">
+                        <td>{{sr}}</td>
+                        <td>{{item.firstName}} {{item.firstName}}</td>
+                        <td>{{item.phone}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.compliantAgainst}}</td>
+                        <td>{{item.city}}</td>
+                        <td>{{item.state}}</td>
+                        <!-- <td>
+                            <button class="btn btn-sm btn-success" (click)="onEdit(item.id) ">Edit</button>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
